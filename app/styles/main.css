@@ -1,0 +1,74 @@
+body {
+  box-sizing: border-box;
+}
+
+input {
+  margin: 5px;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.container {
+  width: 60%;
+  margin: auto;
+}
+
+.jumbotron {
+  margin-top: 80px;
+  text-align: center;
+}
+
+#search-form {
+  margin-top: 10px;
+  margin-left: -20px;
+}
+
+.client-error,
+.http-error {
+  color: red;
+}
+
+.gallery {
+  margin-top: 40px;
+}
+
+.frame {
+  width: 20%;
+  float: left;
+  overflow: hidden;
+  -webkit-transition: 2s linear all;
+  transition: 2s linear all;
+}
+
+.frame img {
+  width: 150px;
+  margin: auto;
+}
+
+.row {
+  margin-top: 10px;
+}
+
+/* The starting CSS styles for the enter animation */
+.gallery.ng-enter {
+  opacity: 0;
+  max-height: 0em;
+}
+
+/* The finishing CSS styles for the enter animation */
+.gallery.ng-enter.ng-enter-active {
+  opacity: 1;
+  max-height: 1em;
+}

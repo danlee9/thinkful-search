@@ -1,0 +1,22 @@
+<div class="jumbotron">
+  
+    <img src="images/ng-instagram.png" alt="Logo">
+
+    <br>
+
+    <form id="search-form" novalidate name="myForm" ng-submit="mainCtrl.submit()">
+      <input type="text" name="search" placeholder="Enter a tag to search" required ng-model="mainCtrl.search"><input type="submit" value="Submit">
+    </form>
+    <div class="client-error" ng-if="mainCtrl.clicked && !mainCtrl.validated">A search term must be supplied</div>
+    <div class="http-error" ng-if="mainCtrl.clicked && mainCtrl.error">Error finding tags. This may be a problem from the server or you may have submitted a search term with spaces. Please use search terms with no white spaces.</div>
+    <div class="searching" ng-if="mainCtrl.clicked && mainCtrl.validated">Searching Instagram for photos tagged with "{{mainCtrl.searchHold}}"</div>
+
+</div>
+
+<div class="gallery" ng-if="mainCtrl.success">
+  <div class="row cf" ng-repeat="n in [0,5,10,15]">
+    <div class="frame" ng-repeat="m in [0,1,2,3,4]">
+      <a ng-href="{{mainCtrl.links[m+n]}}"><img ng-src="{{mainCtrl.pics[m+n]}}" alt=""></a>
+    </div>
+  </div>
+</div>
