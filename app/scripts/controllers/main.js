@@ -29,8 +29,8 @@ angular.module('thinkfulSearchApp')
     	}
 
     	if (self.validated) {
-    		var url = "https://api.instagram.com/v1/tags/" + self.search + 
-    		"/media/recent";
+    		var url = 'https://api.instagram.com/v1/tags/' + self.search + 
+    		'/media/recent';
     		// var url = "https://api.instagram.com/v1/users/20824486";
     		var request = {
     			callback: 'JSON_CALLBACK',
@@ -55,11 +55,11 @@ angular.module('thinkfulSearchApp')
     		.error(function() {
     			self.error = true;
     			self.validated = false;
-    		})
+    		});
     		self.search = '';
     		
     	}
-    }
+    };
   }]);
 
 // ng-pattern="/^\S/" <-- why this doesn't work?
